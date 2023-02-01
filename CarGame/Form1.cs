@@ -28,12 +28,12 @@ namespace DodgeTheRock
             rock3.Location = new Point(pos3, -200);
             rock4.Location = new Point(pos4, -200);
             rock5.Location = new Point(pos5, -200);
-            stopGame();            
+            stopGame();
         }
 
         private void carGame_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Left || e.KeyCode == Keys.A) 
+            if (e.KeyCode == Keys.Left || e.KeyCode == Keys.A)
             {
                 e.Handled = true;
                 moveLeft();
@@ -45,7 +45,7 @@ namespace DodgeTheRock
                 e.Handled = true;
                 moveRight();
                 return;
-            }         
+            }
 
             if (e.KeyCode == Keys.Escape)
             {
@@ -69,10 +69,11 @@ namespace DodgeTheRock
                 {
                     if (x.Location.Y == 0)
                     {
-                        while (rockLane == lastRock)
-                        {
-                            rockLane = rand.Next(1, 6);
+                        while (rockLane == lastRock) 
+                        { 
+                        rockLane = rand.Next(1, 6);
                         }
+                        lastRock = rockLane;   
                         rollRock(rockLane);
                     }
 
@@ -260,6 +261,16 @@ namespace DodgeTheRock
             startBtn.BringToFront();
             changeBtn.BringToFront();
             exitBtn.BringToFront();
+            yellowCar.Visible = false;
+            cyanCar.Visible = false;
+            blueCar.Visible = false;
+            orangeCar.Visible = false;
+            redCar.Visible = false;
+            yellowCar.SendToBack();
+            cyanCar.SendToBack();
+            blueCar.SendToBack();
+            orangeCar.SendToBack();
+            redCar.SendToBack();
         }
 
         private void hideMenu()
@@ -280,6 +291,7 @@ namespace DodgeTheRock
         private void gameOver()
         {
             gameOverPic.Visible = true;
+            gameOverPic.BringToFront();
             gameOverText.Visible = true;
             gameOverText.BringToFront();
             pressEnterText.Visible = true;
@@ -289,7 +301,7 @@ namespace DodgeTheRock
         private void rock1Timer_Tick(object sender, EventArgs e)
         {
             rock1.Location = new Point(pos1, rock1.Location.Y + rockSpeed);
-            if (rock1.Location.Y == 800)
+            if (rock1.Location.Y >= 712)
             {
                 rock1.Location = new Point(pos1, -200);
                 rock1Timer.Enabled = false;
@@ -299,7 +311,7 @@ namespace DodgeTheRock
         private void rock2Timer_Tick(object sender, EventArgs e)
         {
             rock2.Location = new Point(pos2, rock2.Location.Y + rockSpeed);
-            if (rock2.Location.Y == 800)
+            if (rock2.Location.Y >= 712)
             {
                 rock2.Location = new Point(pos1, -200);
                 rock2Timer.Enabled = false;
@@ -309,7 +321,7 @@ namespace DodgeTheRock
         private void rock3Timer_Tick(object sender, EventArgs e)
         {
             rock3.Location = new Point(pos3, rock3.Location.Y + rockSpeed);
-            if (rock3.Location.Y == 800)
+            if (rock3.Location.Y >= 712)
             {
                 rock3.Location = new Point(pos1, -200);
                 rock3Timer.Enabled = false;
@@ -319,7 +331,7 @@ namespace DodgeTheRock
         private void rock4Timer_Tick(object sender, EventArgs e)
         {
             rock4.Location = new Point(pos4, rock4.Location.Y + rockSpeed);
-            if (rock4.Location.Y == 800)
+            if (rock4.Location.Y >= 712)
             {
                 rock4.Location = new Point(pos1, -200);
                 rock4Timer.Enabled = false;
@@ -329,7 +341,7 @@ namespace DodgeTheRock
         private void rock5Timer_Tick(object sender, EventArgs e)
         {
             rock5.Location = new Point(pos5, rock5.Location.Y + rockSpeed);
-            if (rock5.Location.Y == 800)
+            if (rock5.Location.Y >= 712)
             {
                 rock5.Location = new Point(pos1, -200);
                 rock5Timer.Enabled = false;
@@ -348,19 +360,66 @@ namespace DodgeTheRock
             changeBtn.Visible = false;
             exitBtn.Visible = false;
         }
-        
+
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (keyData == Keys.Enter && gameOverPic.Visible == true && gameOverText.Visible == true && pressEnterText.Visible == true)
             {
-                menu();
-                gameOverPic.Visible = false;
-                gameOverText.Visible = false;
-                pressEnterText.Visible = false;
-                gameOverText.SendToBack();
-                pressEnterText.SendToBack();
+                Application.Exit();
             }
             return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        private void exitBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void changeBtn_Click(object sender, EventArgs e)
+        {
+            hideMenu();
+            menuPic.BringToFront();
+            menuPic.Visible = true;
+            yellowCar.Visible = true;
+            cyanCar.Visible = true;
+            blueCar.Visible = true;
+            orangeCar.Visible = true;
+            redCar.Visible = true;
+            yellowCar.BringToFront();
+            cyanCar.BringToFront();
+            blueCar.BringToFront();
+            orangeCar.BringToFront();
+            redCar.BringToFront();
+        }
+
+        private void yellowCar_Click(object sender, EventArgs e)
+        {
+            racecar.Image = Properties.Resources.yellow;
+            menu();
+        }
+
+        private void cyanCar_Click(object sender, EventArgs e)
+        {
+            racecar.Image = Properties.Resources.cyan;
+            menu();
+        }
+
+        private void blueCar_Click(object sender, EventArgs e)
+        {
+            racecar.Image = Properties.Resources.blue;
+            menu();
+        }
+
+        private void orangeCar_Click(object sender, EventArgs e)
+        {
+            racecar.Image = Properties.Resources.orange;
+            menu();
+        }
+
+        private void redCar_Click(object sender, EventArgs e)
+        {
+            racecar.Image = Properties.Resources.red;
+            menu();
         }
     }
 }

@@ -46,11 +46,16 @@
             this.rock5Timer = new System.Windows.Forms.Timer(this.components);
             this.gameOverPic = new System.Windows.Forms.PictureBox();
             this.gameOverText = new System.Windows.Forms.Label();
-            this.pressEnterText = new System.Windows.Forms.Label();
             this.menuPic = new System.Windows.Forms.PictureBox();
             this.startBtn = new System.Windows.Forms.Button();
             this.changeBtn = new System.Windows.Forms.Button();
             this.exitBtn = new System.Windows.Forms.Button();
+            this.pressEnterText = new System.Windows.Forms.Label();
+            this.yellowCar = new System.Windows.Forms.PictureBox();
+            this.blueCar = new System.Windows.Forms.PictureBox();
+            this.cyanCar = new System.Windows.Forms.PictureBox();
+            this.orangeCar = new System.Windows.Forms.PictureBox();
+            this.redCar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.raceTrack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.racecar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rock1)).BeginInit();
@@ -61,12 +66,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.raceTrack1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gameOverPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.menuPic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yellowCar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blueCar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cyanCar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orangeCar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.redCar)).BeginInit();
             this.SuspendLayout();
             // 
             // raceTrack
             // 
             this.raceTrack.Image = global::DodgeTheRock.Properties.Resources.racetrack;
-            this.raceTrack.Location = new System.Drawing.Point(0, 0);
+            this.raceTrack.Location = new System.Drawing.Point(-2, 0);
             this.raceTrack.Name = "raceTrack";
             this.raceTrack.Size = new System.Drawing.Size(733, 711);
             this.raceTrack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -148,7 +158,7 @@
             // raceTrack1
             // 
             this.raceTrack1.Image = global::DodgeTheRock.Properties.Resources.racetrack;
-            this.raceTrack1.Location = new System.Drawing.Point(0, -285);
+            this.raceTrack1.Location = new System.Drawing.Point(-2, -285);
             this.raceTrack1.Name = "raceTrack1";
             this.raceTrack1.Size = new System.Drawing.Size(733, 711);
             this.raceTrack1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -189,7 +199,7 @@
             // gameOverPic
             // 
             this.gameOverPic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.gameOverPic.Location = new System.Drawing.Point(0, 0);
+            this.gameOverPic.Location = new System.Drawing.Point(-2, 0);
             this.gameOverPic.Name = "gameOverPic";
             this.gameOverPic.Size = new System.Drawing.Size(733, 711);
             this.gameOverPic.TabIndex = 8;
@@ -201,7 +211,7 @@
             this.gameOverText.AutoSize = true;
             this.gameOverText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.gameOverText.Font = new System.Drawing.Font("Stencil", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.gameOverText.Location = new System.Drawing.Point(63, 230);
+            this.gameOverText.Location = new System.Drawing.Point(61, 252);
             this.gameOverText.Name = "gameOverText";
             this.gameOverText.Size = new System.Drawing.Size(606, 114);
             this.gameOverText.TabIndex = 9;
@@ -209,22 +219,10 @@
             this.gameOverText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.gameOverText.Visible = false;
             // 
-            // pressEnterText
-            // 
-            this.pressEnterText.AutoSize = true;
-            this.pressEnterText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pressEnterText.Font = new System.Drawing.Font("Stencil", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.pressEnterText.Location = new System.Drawing.Point(31, 360);
-            this.pressEnterText.Name = "pressEnterText";
-            this.pressEnterText.Size = new System.Drawing.Size(671, 57);
-            this.pressEnterText.TabIndex = 10;
-            this.pressEnterText.Text = "Press Enter to Continue";
-            this.pressEnterText.Visible = false;
-            // 
             // menuPic
             // 
             this.menuPic.BackgroundImage = global::DodgeTheRock.Properties.Resources.DodgeTheRock;
-            this.menuPic.Location = new System.Drawing.Point(0, 0);
+            this.menuPic.Location = new System.Drawing.Point(-2, 0);
             this.menuPic.Name = "menuPic";
             this.menuPic.Size = new System.Drawing.Size(733, 711);
             this.menuPic.TabIndex = 11;
@@ -235,7 +233,7 @@
             this.startBtn.BackColor = System.Drawing.Color.Cyan;
             this.startBtn.Font = new System.Drawing.Font("Times New Roman", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.startBtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.startBtn.Location = new System.Drawing.Point(261, 282);
+            this.startBtn.Location = new System.Drawing.Point(254, 272);
             this.startBtn.Name = "startBtn";
             this.startBtn.Size = new System.Drawing.Size(221, 62);
             this.startBtn.TabIndex = 12;
@@ -248,24 +246,99 @@
             this.changeBtn.BackColor = System.Drawing.Color.Cyan;
             this.changeBtn.Font = new System.Drawing.Font("Times New Roman", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.changeBtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.changeBtn.Location = new System.Drawing.Point(261, 364);
+            this.changeBtn.Location = new System.Drawing.Point(254, 354);
             this.changeBtn.Name = "changeBtn";
             this.changeBtn.Size = new System.Drawing.Size(221, 62);
             this.changeBtn.TabIndex = 13;
             this.changeBtn.Text = "Change Car";
             this.changeBtn.UseVisualStyleBackColor = false;
+            this.changeBtn.Click += new System.EventHandler(this.changeBtn_Click);
             // 
             // exitBtn
             // 
             this.exitBtn.BackColor = System.Drawing.Color.Cyan;
             this.exitBtn.Font = new System.Drawing.Font("Times New Roman", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.exitBtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.exitBtn.Location = new System.Drawing.Point(261, 446);
+            this.exitBtn.Location = new System.Drawing.Point(254, 436);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Size = new System.Drawing.Size(221, 62);
             this.exitBtn.TabIndex = 14;
             this.exitBtn.Text = "Exit Game";
             this.exitBtn.UseVisualStyleBackColor = false;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
+            // 
+            // pressEnterText
+            // 
+            this.pressEnterText.AutoSize = true;
+            this.pressEnterText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pressEnterText.Font = new System.Drawing.Font("Stencil", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.pressEnterText.Location = new System.Drawing.Point(94, 366);
+            this.pressEnterText.Name = "pressEnterText";
+            this.pressEnterText.Size = new System.Drawing.Size(542, 57);
+            this.pressEnterText.TabIndex = 15;
+            this.pressEnterText.Text = "Press Enter To Exit";
+            this.pressEnterText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pressEnterText.Visible = false;
+            // 
+            // yellowCar
+            // 
+            this.yellowCar.BackColor = System.Drawing.Color.Cyan;
+            this.yellowCar.BackgroundImage = global::DodgeTheRock.Properties.Resources.yellow;
+            this.yellowCar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.yellowCar.Location = new System.Drawing.Point(12, 312);
+            this.yellowCar.Name = "yellowCar";
+            this.yellowCar.Size = new System.Drawing.Size(74, 156);
+            this.yellowCar.TabIndex = 16;
+            this.yellowCar.TabStop = false;
+            this.yellowCar.Click += new System.EventHandler(this.yellowCar_Click);
+            // 
+            // blueCar
+            // 
+            this.blueCar.BackColor = System.Drawing.Color.Cyan;
+            this.blueCar.BackgroundImage = global::DodgeTheRock.Properties.Resources.blue;
+            this.blueCar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.blueCar.Location = new System.Drawing.Point(330, 312);
+            this.blueCar.Name = "blueCar";
+            this.blueCar.Size = new System.Drawing.Size(74, 156);
+            this.blueCar.TabIndex = 17;
+            this.blueCar.TabStop = false;
+            this.blueCar.Click += new System.EventHandler(this.blueCar_Click);
+            // 
+            // cyanCar
+            // 
+            this.cyanCar.BackColor = System.Drawing.Color.Cyan;
+            this.cyanCar.BackgroundImage = global::DodgeTheRock.Properties.Resources.cyan;
+            this.cyanCar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cyanCar.Location = new System.Drawing.Point(173, 312);
+            this.cyanCar.Name = "cyanCar";
+            this.cyanCar.Size = new System.Drawing.Size(74, 156);
+            this.cyanCar.TabIndex = 18;
+            this.cyanCar.TabStop = false;
+            this.cyanCar.Click += new System.EventHandler(this.cyanCar_Click);
+            // 
+            // orangeCar
+            // 
+            this.orangeCar.BackColor = System.Drawing.Color.Cyan;
+            this.orangeCar.BackgroundImage = global::DodgeTheRock.Properties.Resources.orange;
+            this.orangeCar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.orangeCar.Location = new System.Drawing.Point(489, 312);
+            this.orangeCar.Name = "orangeCar";
+            this.orangeCar.Size = new System.Drawing.Size(74, 156);
+            this.orangeCar.TabIndex = 19;
+            this.orangeCar.TabStop = false;
+            this.orangeCar.Click += new System.EventHandler(this.orangeCar_Click);
+            // 
+            // redCar
+            // 
+            this.redCar.BackColor = System.Drawing.Color.Cyan;
+            this.redCar.BackgroundImage = global::DodgeTheRock.Properties.Resources.red;
+            this.redCar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.redCar.Location = new System.Drawing.Point(646, 312);
+            this.redCar.Name = "redCar";
+            this.redCar.Size = new System.Drawing.Size(74, 156);
+            this.redCar.TabIndex = 20;
+            this.redCar.TabStop = false;
+            this.redCar.Click += new System.EventHandler(this.redCar_Click);
             // 
             // carGame
             // 
@@ -287,6 +360,11 @@
             this.Controls.Add(this.racecar);
             this.Controls.Add(this.raceTrack1);
             this.Controls.Add(this.raceTrack);
+            this.Controls.Add(this.cyanCar);
+            this.Controls.Add(this.yellowCar);
+            this.Controls.Add(this.redCar);
+            this.Controls.Add(this.orangeCar);
+            this.Controls.Add(this.blueCar);
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "carGame";
@@ -303,6 +381,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.raceTrack1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gameOverPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.menuPic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yellowCar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blueCar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cyanCar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orangeCar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.redCar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,10 +410,15 @@
         private System.Windows.Forms.Timer rock5Timer;
         private PictureBox gameOverPic;
         private Label gameOverText;
-        private Label pressEnterText;
         private PictureBox menuPic;
         private Button startBtn;
         private Button changeBtn;
         private Button exitBtn;
+        private Label pressEnterText;
+        private PictureBox yellowCar;
+        private PictureBox blueCar;
+        private PictureBox cyanCar;
+        private PictureBox orangeCar;
+        private PictureBox redCar;
     }
 }
